@@ -1,0 +1,81 @@
+/* styles.css */
+
+/* Basic Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Control Panel */
+.controls {
+    width: 33.33%; /* 1/3 of the screen width */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Palette Sections */
+.palette {
+    margin-bottom: 30px;
+}
+
+.palette h3 {
+    margin-bottom: 15px;
+}
+
+.palette label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.palette input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Mode Buttons */
+.mode-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.mode-button {
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #ddd;
+    border: none;
+    border-radius: 4px;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.mode-button.active {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* Canvas */
+#canvas {
+    width: 66.66%; /* 2/3 of the screen width */
+    height: 100vh;
+    border: 1px solid #000;
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 800px) {
+    body {
+        flex-direction: column;
+    }
+
+    .controls, #canvas {
+        width: 100%;
+        height: 50vh;
+    }
+}

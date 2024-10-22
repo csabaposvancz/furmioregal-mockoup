@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Designer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-height: 90%;
+            overflow-y: auto;
+        }
+
+        .controls h2, .controls h3 {
+            margin-top: 0;
+        }
+
+        .controls label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .controls .slider-container {
+            margin-bottom: 15px;
+        }
+
+        canvas {
+            border: 2px solid #333;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <h2>Furniture Settings</h2>
+
+        <!-- Other sliders for width, height, etc. -->
+        <label for="widthSlider">Width (cm): <span id="widthValue">100</span></label>
+        <input type="range" id="widthSlider" min="50" max="300" value="100">
+
+        <label for="heightSlider">Height (cm): <span id="heightValue">150</span></label>
+        <input type="range" id="heightSlider" min="50" max="300" value="150">
+
+        <label for="rowsSlider">Number of Rows: <span id="rowsValue">3</span></label>
+        <input type="range" id="rowsSlider" min="1" max="10" value="3">
+
+        <label for="densitySlider">Column Density (%): <span id="densityValue">40</span></label>
+        <input type="range" id="densitySlider" min="10" max="100" value="40">
+
+        <!-- Sliders for each row's height -->
+        <h3>Row Heights</h3>
+        <div id="rowHeightSliders"></div> <!-- This is where the row sliders will go -->
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
